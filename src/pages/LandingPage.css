@@ -1,0 +1,254 @@
+.landing-page {
+  width: 100%;
+}
+
+.hero-section {
+  padding: 80px 0;
+  background: linear-gradient(to right, #F9F8F4, #EFECE1);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.text-primary {
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  display: inline-block;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  background-color: #D2A868; /* Wood-like color */
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.mock-tablet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  width: 240px;
+  height: 320px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 10px;
+}
+
+.mock-resume {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.how-it-works {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  background-color: var(--color-surface);
+  padding: 32px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #E2F0E6;
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.step-icon.icon-yellow {
+  background-color: #F8EAD4;
+  color: var(--color-tertiary);
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.choose-style {
+  padding: 80px 0;
+  background-color: #F9F8F4;
+}
+
+.style-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.style-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.style-header p {
+  color: var(--color-text-muted);
+}
+
+.style-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-secondary.active {
+  background-color: var(--color-surface);
+  border: 1px solid #ddd;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.template-card {
+  height: 360px;
+  border-radius: var(--border-radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.template-dark {
+  background-color: #384A41;
+}
+
+.template-darker {
+  background-color: #2D2D2D;
+}
+
+.template-light {
+  background-color: #A2B2B3;
+}
+
+.template-preview {
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.template-name {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.template-light .template-name {
+  color: var(--color-text-main);
+}
+
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: var(--color-surface);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: 'Literata', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.copyright {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}

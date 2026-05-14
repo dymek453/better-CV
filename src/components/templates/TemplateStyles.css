@@ -1,0 +1,492 @@
+/* Base settings for all templates */
+.template-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================================================
+   1. BOLD IMPACT (Terra Modern)
+   Left sidebar with dark green background
+========================================================= */
+.tpl-bold-impact {
+  display: flex;
+  height: 100%;
+  color: var(--color-text-main);
+}
+
+.tpl-bold-impact-sidebar {
+  width: 35%;
+  background-color: #3B5A42; /* Dark green */
+  color: #fff;
+  padding: 40px 30px;
+}
+
+.tpl-bold-impact-main {
+  width: 65%;
+  background-color: #fff;
+  padding: 50px 40px;
+}
+
+.tpl-bold-impact .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  margin: 0 auto 40px;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.tpl-bold-impact-sidebar h3 {
+  color: #A3C9A6;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
+}
+
+.tpl-bold-impact-sidebar ul {
+  list-style: none;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+}
+
+.tpl-bold-impact-sidebar li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tpl-bold-impact-sidebar .skill-item {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.tpl-bold-impact .name {
+  font-family: 'Literata', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1a2f23;
+  margin-bottom: 8px;
+}
+
+.tpl-bold-impact .role {
+  color: #3B5A42;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #3B5A42;
+}
+
+.tpl-bold-impact-section {
+  margin-bottom: 32px;
+}
+
+.tpl-bold-impact-section h4 {
+  font-family: 'Literata', serif;
+  color: #1a2f23;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tpl-bold-impact .job-entry {
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.tpl-bold-impact .job-entry::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #3B5A42;
+  border-radius: 50%;
+}
+
+.tpl-bold-impact .job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.tpl-bold-impact .job-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.tpl-bold-impact .job-date {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.tpl-bold-impact .job-company {
+  color: #3B5A42;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.tpl-bold-impact .job-desc {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   2. ELEGANT SERIF (Elegance)
+   Centered layout, very clean and minimalist
+========================================================= */
+.tpl-elegant-serif {
+  padding: 60px;
+  color: #222;
+  background-color: #fff;
+  height: 100%;
+}
+
+.tpl-elegant-serif-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tpl-elegant-serif .name {
+  font-family: 'Literata', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.tpl-elegant-serif .role {
+  color: #4a5568;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 40px;
+}
+
+.tpl-elegant-serif-body {
+  display: flex;
+  gap: 40px;
+}
+
+.tpl-elegant-serif-left {
+  width: 35%;
+}
+
+.tpl-elegant-serif-right {
+  width: 65%;
+}
+
+.tpl-elegant-serif h4 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #718096;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.tpl-elegant-serif p, .tpl-elegant-serif li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.tpl-elegant-serif-section {
+  margin-bottom: 40px;
+}
+
+.tpl-elegant-serif .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tpl-elegant-serif .job-entry {
+  margin-bottom: 30px;
+}
+
+.tpl-elegant-serif .job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.tpl-elegant-serif .job-title {
+  font-family: 'Literata', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a202c;
+}
+
+.tpl-elegant-serif .job-company {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   3. GEOMETRIC GRID (Bio Organic)
+   Green accents, timeline, tag-based skills
+========================================================= */
+.tpl-geometric-grid {
+  padding: 50px;
+  background-color: #fff;
+  height: 100%;
+}
+
+.tpl-geometric-grid-header {
+  text-align: right;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.tpl-geometric-grid-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tpl-geometric-grid .name-box {
+  text-align: left;
+}
+
+.tpl-geometric-grid .name {
+  font-family: 'Literata', serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #2D3748;
+}
+
+.tpl-geometric-grid .role {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #48bb78;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tpl-geometric-grid .contact-info {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #718096;
+  line-height: 1.6;
+}
+
+.tpl-geometric-grid-body {
+  display: flex;
+  gap: 50px;
+}
+
+.tpl-geometric-grid-left {
+  width: 35%;
+}
+
+.tpl-geometric-grid-right {
+  width: 65%;
+}
+
+.tpl-geometric-grid h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.tpl-geometric-grid .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tpl-geometric-grid .skill-tag {
+  background-color: #e6ffed;
+  color: #2f855a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tpl-geometric-grid .job-entry {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid #cbd5e0;
+  margin-bottom: 30px;
+}
+
+.tpl-geometric-grid .job-entry::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 2px solid #48bb78;
+  border-radius: 50%;
+}
+
+.tpl-geometric-grid .job-title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.tpl-geometric-grid .job-meta {
+  color: #48bb78;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   4. MODERN PRO (Akademik)
+   Split layout with grey/white bg and progress bars
+========================================================= */
+.tpl-modern-pro {
+  display: flex;
+  height: 100%;
+}
+
+.tpl-modern-pro-sidebar {
+  width: 35%;
+  background-color: #f7fafc; /* light grey */
+  padding: 50px 40px;
+  border-right: 1px solid #e2e8f0;
+}
+
+.tpl-modern-pro-main {
+  width: 65%;
+  background-color: #fff;
+  padding: 50px 40px;
+}
+
+.tpl-modern-pro .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+}
+
+.tpl-modern-pro h4 {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #48bb78;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.tpl-modern-pro .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.tpl-modern-pro .skill-item {
+  margin-bottom: 16px;
+}
+
+.tpl-modern-pro .skill-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+.tpl-modern-pro .skill-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tpl-modern-pro .skill-progress {
+  height: 100%;
+  background-color: #48bb78;
+  border-radius: 3px;
+}
+
+.tpl-modern-pro .name {
+  font-family: 'Literata', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.tpl-modern-pro .role {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #718096;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.tpl-modern-pro .job-entry {
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid #cbd5e0;
+  margin-bottom: 30px;
+}
+
+.tpl-modern-pro .job-entry::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  background-color: #cbd5e0;
+  border-radius: 50%;
+}
+
+.tpl-modern-pro .job-title {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.05rem;
+}
+
+.tpl-modern-pro .job-meta {
+  color: #718096;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.tpl-modern-pro .job-company {
+  color: #48bb78;
+}
