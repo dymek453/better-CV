@@ -2,7 +2,7 @@ import React from 'react';
 import './TemplateStyles.css';
 
 export default function BoldImpact({ data }) {
-  const { personalInfo, experience, education, skills } = data;
+  const { personalInfo, experience, education, skills, languages } = data;
 
   return (
     <div className="template-wrapper tpl-bold-impact">
@@ -25,6 +25,21 @@ export default function BoldImpact({ data }) {
               {skills.map((skill, idx) => (
                 skill.name && <li key={idx} className="skill-item">{skill.name}</li>
               ))}
+            </ul>
+          </div>
+        )}
+
+        {languages?.length > 0 && languages.some(l => l.language) && (
+          <div className="tpl-bold-impact-section">
+            <h3>JĘZYKI</h3>
+            <ul>
+              {languages.map((lang, idx) =>
+                lang.language && (
+                  <li key={idx} className="skill-item">
+                    {lang.language}{lang.level ? ` — ${lang.level}` : ''}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         )}

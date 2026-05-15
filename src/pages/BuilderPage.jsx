@@ -21,11 +21,12 @@ export default function BuilderPage() {
   const experience = useCVStore((s) => s.experience);
   const education = useCVStore((s) => s.education);
   const skills = useCVStore((s) => s.skills);
+  const languages = useCVStore((s) => s.languages);
   const selectedTemplate = useCVStore((s) => s.selectedTemplate);
   const setCVData = useCVStore((s) => s.setCVData);
   const setTemplate = useCVStore((s) => s.setTemplate);
 
-  const previewData = { personalInfo, experience, education, skills };
+  const previewData = { personalInfo, experience, education, skills, languages };
 
   const componentRef = useRef(null);
 
@@ -54,18 +55,20 @@ export default function BuilderPage() {
       experience: experience.length ? experience : [{}],
       education: education.length ? education : [{}],
       skills: skills.length ? skills : [{ name: '' }],
+      languages: languages.length ? languages : [],
     },
   });
 
   const { fields: expFields, append: appendExp, remove: removeExp } = useFieldArray({ control, name: 'experience' });
   const { fields: eduFields, append: appendEdu, remove: removeEdu } = useFieldArray({ control, name: 'education' });
   const { fields: skillFields, append: appendSkill, remove: removeSkill } = useFieldArray({ control, name: 'skills' });
+  const { fields: langFields, append: appendLang, remove: removeLang } = useFieldArray({ control, name: 'languages' });
 
   const formData = watch();
 
   useEffect(() => {
-    const { personalInfo: pi, experience: ex, education: ed, skills: sk } = formData;
-    setCVData({ personalInfo: pi, experience: ex, education: ed, skills: sk });
+    const { personalInfo: pi, experience: ex, education: ed, skills: sk, languages: la } = formData;
+    setCVData({ personalInfo: pi, experience: ex, education: ed, skills: sk, languages: la });
   }, [formData, setCVData]);
 
   return (
@@ -237,6 +240,53 @@ export default function BuilderPage() {
                         <div className="skill-input-group" key={item.id}>
                           <input type="text" {...register(`skills.${index}.name`)} placeholder="np. React.js" />
                           <button type="button" className="btn-icon-danger" onClick={() => removeSkill(index)}>
+                            <Trash2 size={14} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Języki */}
+                  <div className="form-section">
+                    <div className="section-header-flex">
+                      <div><h3>Języki</h3></div>
+                      <button type="button" className="btn btn-icon add-btn" onClick={() => appendLang({ language: '', level: 'B2' })}>
+                        <PlusCircle size={20} />
+                      </button>
+                    </div>
+                    <div className="languages-list">
+                      {langFields.map((item, index) => (
+                        <div className="language-entry" key={item.id}>
+                          <select className="lang-select" {...register(`languages.${index}.language`)}>
+                            <option value="">— wybierz język —</option>
+                            <option value="Angielski">Angielski</option>
+                            <option value="Niemiecki">Niemiecki</option>
+                            <option value="Francuski">Francuski</option>
+                            <option value="Hiszpański">Hiszpański</option>
+                            <option value="Włoski">Włoski</option>
+                            <option value="Rosyjski">Rosyjski</option>
+                            <option value="Chiński">Chiński</option>
+                            <option value="Japoński">Japoński</option>
+                            <option value="Arabski">Arabski</option>
+                            <option value="Portugalski">Portugalski</option>
+                            <option value="Niderlandzki">Niderlandzki</option>
+                            <option value="Szwedzki">Szwedzki</option>
+                            <option value="Norweski">Norweski</option>
+                            <option value="Duński">Duński</option>
+                            <option value="Ukraiński">Ukraiński</option>
+                          </select>
+                          <select className="lang-select" {...register(`languages.${index}.level`)}>
+                            <option value="">— poziom —</option>
+                            <option value="A1">A1 — Podstawowy</option>
+                            <option value="A2">A2 — Podstawowy+</option>
+                            <option value="B1">B1 — Średniozaawansowany</option>
+                            <option value="B2">B2 — Średniozaawansowany+</option>
+                            <option value="C1">C1 — Zaawansowany</option>
+                            <option value="C2">C2 — Biegły</option>
+                            <option value="Native">Ojczysty / Native</option>
+                          </select>
+                          <button type="button" className="btn-icon-danger" onClick={() => removeLang(index)}>
                             <Trash2 size={14} />
                           </button>
                         </div>
