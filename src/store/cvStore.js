@@ -12,6 +12,7 @@ export const useCVStore = create((set) => ({
   experience: [],
   education: [],
   skills: [],
+  languages: [],
   selectedTemplate: 'bold-impact', // default
   
   setTemplate: (templateId) => set({ selectedTemplate: templateId }),
