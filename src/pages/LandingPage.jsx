@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FileText, Edit3, Download } from 'lucide-react';
+import TemplateRenderer from '../components/templates/TemplateRenderer';
+import { useCVStore } from '../store/cvStore';
 import './LandingPage.css';
+
+const DEMO_DATA = {
+  personalInfo: {
+    firstName: 'Anna',
+    lastName: 'Kowalska',
+    email: 'anna.kowalska@email.com',
+    phone: '+48 500 123 456',
+    location: 'Warszawa, Polska',
+    summary: 'Doświadczony specjalista z pasją do tworzenia innowacyjnych rozwiązań. Skuteczny w pracy zespołowej i zarządzaniu projektami.',
+  },
+  experience: [
+    { role: 'Senior Product Manager', company: 'TechCorp Sp. z o.o.', period: '2021 – teraz', description: 'Zarządzanie roadmapą produktu i zespołem 8 deweloperów.' },
+    { role: 'Product Manager', company: 'StartupXYZ', period: '2019 – 2021', description: 'Wprowadzenie 3 nowych funkcji zwiększających retencję o 40%.' },
+  ],
+  education: [
+    { degree: 'Mgr Zarządzania', school: 'Szkoła Główna Handlowa', period: '2017 – 2019' },
+  ],
+  skills: [
+    { name: 'Product Strategy' }, { name: 'Agile / Scrum' }, { name: 'Data Analysis' }, { name: 'Figma' },
+  ],
+  languages: [
+    { language: 'Polski', level: 'Natywny' }, { language: 'Angielski', level: 'C1' },
+  ],
+};
+
+const TEMPLATES = [
+  { id: 'bold-impact',    name: 'TERRA MODERN', label: 'Nowoczesny' },
+  { id: 'elegant-serif',  name: 'ELEGANCE',     label: 'Elegancki' },
+  { id: 'geometric-grid', name: 'BIO ORGANIC',  label: 'Kreatywny' },
+  { id: 'modern-pro',     name: 'AKADEMIK',     label: 'Klasyczny' },
+];
 
 export default function LandingPage() {
   const { t } = useTranslation();
+  const setTemplate = useCVStore(state => state.setTemplate);
+  const navigate = useNavigate();
+  const [hoveredId, setHoveredId] = useState(null);
+
+  function handleSelectTemplate(id) {
+    setTemplate(id);
+    navigate('/builder');
+  }
 
   return (
     <div className="landing-page">
@@ -19,7 +60,6 @@ export default function LandingPage() {
             </Link>
           </div>
           <div className="hero-image">
-            {/* Placeholder for the tablet image from the design */}
             <div className="image-placeholder">
               <div className="mock-tablet">
                 <div className="mock-resume"></div>
@@ -35,7 +75,6 @@ export default function LandingPage() {
             <h2>{t('how_it_works')}</h2>
             <p>{t('how_it_works_subtitle')}</p>
           </div>
-          
           <div className="steps-grid">
             <div className="step-card">
               <div className="step-icon"><FileText /></div>
@@ -70,24 +109,37 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="templates-grid">
-            {/* Template placeholders mimicking the screenshot */}
-            <div className="template-card template-dark">
-              <div className="template-preview"></div>
-              <div className="template-name">The Minimalist</div>
-            </div>
-            <div className="template-card template-darker">
-              <div className="template-preview"></div>
-              <div className="template-name">Executive Pro</div>
-            </div>
-            <div className="template-card template-dark">
-              <div className="template-preview"></div>
-              <div className="template-name">Modern Creative</div>
-            </div>
-            <div className="template-card template-light">
-              <div className="template-preview"></div>
-              <div className="template-name">Classic Corporate</div>
-            </div>
+          <div className="landing-templates-grid">
+            {TEMPLATES.map(tpl => (
+              <div
+                key={tpl.id}
+                className={`landing-template-card${hoveredId === tpl.id ? ' hovered' : ''}`}
+                onMouseEnter={() => setHoveredId(tpl.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                <div className="landing-template-scale-wrapper">
+                  <TemplateRenderer templateId={tpl.id} data={DEMO_DATA} />
+                </div>
+
+                <div className="landing-template-overlay">
+                  <div className="landing-template-overlay-content">
+                    <div className="landing-template-overlay-name">{tpl.name}</div>
+                    <div className="landing-template-overlay-label">{tpl.label}</div>
+                    <button
+                      className="btn-primary landing-template-cta"
+                      onClick={() => handleSelectTemplate(tpl.id)}
+                    >
+                      Wybierz szablon
+                    </button>
+                  </div>
+                </div>
+
+                <div className="landing-template-footer">
+                  <span className="landing-template-footer-name">{tpl.name}</span>
+                  <span className="landing-template-footer-label">{tpl.label}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
