@@ -2,7 +2,7 @@ import React from 'react';
 import './TemplateStyles.css';
 
 export default function ElegantSerif({ data }) {
-  const { personalInfo, experience, education, skills } = data;
+  const { personalInfo, experience, education, skills, languages } = data;
 
   return (
     <div className="template-wrapper tpl-elegant-serif">
@@ -38,6 +38,19 @@ export default function ElegantSerif({ data }) {
                 {skills.map((skill, idx) => (
                   skill.name && <li key={idx}>{skill.name}</li>
                 ))}
+              </ul>
+            </div>
+          )}
+
+          {languages?.length > 0 && languages.some(l => l.language) && (
+            <div className="tpl-elegant-serif-section">
+              <h4>JĘZYKI</h4>
+              <ul>
+                {languages.map((lang, idx) =>
+                  lang.language && (
+                    <li key={idx}>{lang.language}{lang.level ? ` — ${lang.level}` : ''}</li>
+                  )
+                )}
               </ul>
             </div>
           )}

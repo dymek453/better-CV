@@ -2,7 +2,7 @@ import React from 'react';
 import './TemplateStyles.css';
 
 export default function GeometricGrid({ data }) {
-  const { personalInfo, experience, education, skills } = data;
+  const { personalInfo, experience, education, skills, languages } = data;
 
   return (
     <div className="template-wrapper tpl-geometric-grid">
@@ -40,6 +40,21 @@ export default function GeometricGrid({ data }) {
                 {skills.map((skill, idx) => (
                   skill.name && <span key={idx} className="skill-tag">{skill.name}</span>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {languages?.length > 0 && languages.some(l => l.language) && (
+            <div style={{marginBottom: '40px'}}>
+              <h4>JĘZYKI</h4>
+              <div className="skill-tags">
+                {languages.map((lang, idx) =>
+                  lang.language && (
+                    <span key={idx} className="skill-tag">
+                      {lang.language}{lang.level ? ` ${lang.level}` : ''}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           )}

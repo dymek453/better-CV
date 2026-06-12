@@ -2,7 +2,7 @@ import React from 'react';
 import './TemplateStyles.css';
 
 export default function ModernPro({ data }) {
-  const { personalInfo, experience, education, skills } = data;
+  const { personalInfo, experience, education, skills, languages } = data;
 
   return (
     <div className="template-wrapper tpl-modern-pro">
@@ -34,6 +34,19 @@ export default function ModernPro({ data }) {
                 </div>
               )
             ))}
+          </div>
+        )}
+
+        {languages?.length > 0 && languages.some(l => l.language) && (
+          <div style={{marginBottom: '40px'}}>
+            <h4>JĘZYKI</h4>
+            {languages.map((lang, idx) =>
+              lang.language && (
+                <div key={idx} className="contact-item">
+                  {lang.language}{lang.level ? ` — ${lang.level}` : ''}
+                </div>
+              )
+            )}
           </div>
         )}
       </div>
