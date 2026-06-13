@@ -60,9 +60,9 @@ export default function LandingPage() {
             </Link>
           </div>
           <div className="hero-image">
-            <div className="image-placeholder">
-              <div className="mock-tablet">
-                <div className="mock-resume"></div>
+            <div className="hero-cv-showcase">
+              <div className="hero-cv-scale-wrapper">
+                <TemplateRenderer templateId="modern-pro" data={DEMO_DATA} />
               </div>
             </div>
           </div>
